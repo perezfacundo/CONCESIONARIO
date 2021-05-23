@@ -32,13 +32,13 @@ Partial Public Class index
     Protected WithEvents txtCodigo As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control txtOrigen.
+    '''Control lblCodigo.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtOrigen As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents lblCodigo As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Control txtMarca.
@@ -50,6 +50,33 @@ Partial Public Class index
     Protected WithEvents txtMarca As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''Control lblMarca.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblMarca As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control txtPais.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txtPais As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control lblPais.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblPais As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Control cmdAgregar.
     '''</summary>
     '''<remarks>
@@ -57,4 +84,22 @@ Partial Public Class index
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents cmdAgregar As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Control lblMensaje.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblMensaje As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control dgv.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents dgv As Global.System.Web.UI.WebControls.GridView
 End Class
