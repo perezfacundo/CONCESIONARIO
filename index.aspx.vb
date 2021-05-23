@@ -3,12 +3,12 @@
 Public Class index
     Inherits System.Web.UI.Page
     Dim WithEvents objMantenimiento As New mantenimiento
+    Dim stringHtml As String = ""
 
     Protected Sub cmdAgregar_Click(sender As Object, e As EventArgs) Handles cmdAgregar.Click
         Dim codigo As Integer = 0
         Dim pais As String = ""
         Dim marca As String = ""
-        Dim stringHtml As String = ""
 
         Try
             If txtCodigo.Text = "" Then
@@ -52,42 +52,36 @@ Public Class index
         End If
 
 
-        Dim tabla As New DataTable
-        tabla = objMantenimiento.fListar()
+        'Dim tabla As New DataTable
+        stringHtml = objMantenimiento.fListar()
 
-        'dgv.DataSource = tabla 'PASAR TABLA A GRILLA EN LIMPIO
-        'dgv.DataBind()
-
-        stringHtml = "<table border=1><tbody><tr><th> CODIGO </th><th> DESCRIPCION </th><th> PAIS </th></tr>"
+        'stringHtml = "<table border=1><tbody><tr><th> CODIGO </th><th> DESCRIPCION </th><th> PAIS </th></tr>"
 
 
-        For Each row As DataRow In tabla.Rows
+        'For Each row As DataRow In tabla.Rows
 
-            codigo = CStr(row("codigo"))
-            marca = CStr(row("descripcion"))
-            pais = CStr(row("pais"))
+        '    codigo = CStr(row("codigo"))
+        '    marca = CStr(row("descripcion"))
+        '    pais = CStr(row("pais"))
 
 
-            stringHtml = stringHtml & "<tr>"
-            stringHtml = stringHtml & "<td>" & codigo & "</td>"
-            stringHtml = stringHtml & "<td>" & marca & "</td>"
-            stringHtml = stringHtml & "<td>" & pais & "</td>"
-            'stringHtml = stringHtml & tachito de basura para eliminar el registro
-            stringHtml = stringHtml & "</tr>"
+        '    stringHtml = stringHtml & "<tr>"
+        '    stringHtml = stringHtml & "<td>" & codigo & "</td>"
+        '    stringHtml = stringHtml & "<td>" & marca & "</td>"
+        '    stringHtml = stringHtml & "<td>" & pais & "</td>"
+        '    'stringHtml = stringHtml & tachito de basura para eliminar el registro
+        '    stringHtml = stringHtml & "</tr>"
 
-        Next
-        stringHtml = stringHtml & "</tbody></table>"
+        'Next
+        'stringHtml = stringHtml & "</tbody></table>"
 
         grilla.InnerHtml = stringHtml
 
-        'If dgv.Rows.Count() < 1 Then
-        '    lblMensaje.Text = "No se encontraron registros en la base de datos"
-        'Else
-        '    lblMensaje.Text = ""
-        'End If
     End Sub
 
     Protected Sub cmdListar_Click(sender As Object, e As EventArgs) Handles cmdListar.Click
 
+        stringHtml = objMantenimiento.fListar()
+        grilla.InnerHtml = stringHtml
     End Sub
 End Class
