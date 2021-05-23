@@ -86,6 +86,24 @@ Partial Public Class index
     Protected WithEvents cmdAgregar As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''Control cmdListar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cmdListar As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Control grilla.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents grilla As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
     '''Control lblMensaje.
     '''</summary>
     '''<remarks>
@@ -93,13 +111,4 @@ Partial Public Class index
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lblMensaje As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Control dgv.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents dgv As Global.System.Web.UI.WebControls.GridView
 End Class

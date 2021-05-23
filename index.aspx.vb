@@ -8,6 +8,7 @@ Public Class index
         Dim codigo As Integer = 0
         Dim pais As String = ""
         Dim marca As String = ""
+        Dim stringHtml As String = ""
 
         Try
             If txtCodigo.Text = "" Then
@@ -46,20 +47,47 @@ Public Class index
         End Try
 
         If codigo <> 0 Or marca <> "" Or pais <> "" Then
-            Debug.Print(objMantenimiento.fAgregarMarca(codigo, marca, pais))
+            Dim resultado As String = objMantenimiento.fAgregarMarca(codigo, marca, pais)
+            grilla.InnerHtml = "<p>" & resultado & "</p>"
         End If
 
 
         Dim tabla As New DataTable
         tabla = objMantenimiento.fListar()
 
-        dgv.DataSource = tabla
-        dgv.DataBind()
+        'dgv.DataSource = tabla 'PASAR TABLA A GRILLA EN LIMPIO
+        'dgv.DataBind()
 
-        If dgv.Rows.Count() < 1 Then
-            lblMensaje.Text = "No se encontraron registros en la base de datos"
-        Else
-            lblMensaje.Text = ""
-        End If
+        stringHtml = "<table border=1><tbody><tr><th> CODIGO </th><th> DESCRIPCION </th><th> PAIS </th></tr>"
+
+
+        For Each row As DataRow In tabla.Rows
+
+            codigo = CStr(row("codigo"))
+            marca = CStr(row("descripcion"))
+            pais = CStr(row("pais"))
+
+
+            stringHtml = stringHtml & "<tr>"
+            stringHtml = stringHtml & "<td>" & codigo & "</td>"
+            stringHtml = stringHtml & "<td>" & marca & "</td>"
+            stringHtml = stringHtml & "<td>" & pais & "</td>"
+            'stringHtml = stringHtml & tachito de basura para eliminar el registro
+            stringHtml = stringHtml & "</tr>"
+
+        Next
+        stringHtml = stringHtml & "</tbody></table>"
+
+        grilla.InnerHtml = stringHtml
+
+        'If dgv.Rows.Count() < 1 Then
+        '    lblMensaje.Text = "No se encontraron registros en la base de datos"
+        'Else
+        '    lblMensaje.Text = ""
+        'End If
+    End Sub
+
+    Protected Sub cmdListar_Click(sender As Object, e As EventArgs) Handles cmdListar.Click
+
     End Sub
 End Class

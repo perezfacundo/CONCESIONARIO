@@ -31,15 +31,17 @@
         </div>
 
         <div class="botones">
-            <asp:Button ID="cmdAgregar" runat="server" Text="Agregar" />
+            <asp:Button ID="cmdAgregar" runat="server" Text="AGREGAR" />
+            <asp:Button ID="cmdListar" runat="server" Text="LISTAR" />
         </div>
 
         <hr />
 
-        <div class="datos">
+        <div class="grilla" id="grilla" runat="server">
+
             <asp:Label ID="lblMensaje" runat="server"></asp:Label>
-            <br />
-            <asp:GridView ID="dgv" runat="server"></asp:GridView>
+            <%-- <br />
+            <asp:GridView ID="dgv" runat="server"></asp:GridView>--%>
         </div>
     </form>
 </body>
